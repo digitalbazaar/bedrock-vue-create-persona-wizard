@@ -6,6 +6,7 @@
   "main": "index.js",
   "less": "app.less",
   "scripts": {
+    "start": "node --preserve-symlinks test.js",
     "test": "node --preserve-symlinks test.js test --framework karma",
     "postinstall": "node --preserve-symlinks test.js compile-less"
   },
@@ -39,7 +40,8 @@
     "bedrock-web": "^1.0.0",
     "bedrock-webpack": "^2.0.0",
     "vue": "^2.5.16",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.0.1",
+    "vuelidate": "^0.7.4"
   },
   "bedrock": {
     "browserDependencies": [
@@ -48,7 +50,8 @@
       "bedrock-vue",
       "bedrock-vue-create-persona-wizard",
       "vue",
-      "vue-router"
+      "vue-router",
+      "vuelidate"
     ],
     "manifest": {
       "@fortawesome/fontawesome-free": {

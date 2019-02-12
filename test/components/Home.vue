@@ -3,7 +3,9 @@
     class="column gutter-md background"
     padding>
     <div class="column items-center">
-      <br-create-persona-wizard />
+        <br-create-persona-wizard
+          v-model="form"
+          @done="done" />
     </div>
   </q-page>
 </template>
@@ -19,7 +21,26 @@ export default {
   name: 'Home',
   components: {BrCreatePersonaWizard},
   data() {
-    return {};
+    return {
+      form: {
+        persona: {
+          name: {
+            value: ''
+          },
+          familyName: {
+            value: ''
+          },
+          givenName: {
+            value: ''
+          }
+        }
+      }
+    };
+  },
+  methods: {
+    done() {
+      console.log('Done!', this.form);
+    }
   }
 };
 </script>
