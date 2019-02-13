@@ -23,8 +23,5 @@
   "bugs": {
     "url": "https://github.com/digitalbazaar/bedrock-vue-create-persona-wizard/issues"
   },
-  "homepage": "https://github.com/digitalbazaar/bedrock-vue-create-persona-wizard",
-  "bedrock": {
-    "browserDependencies": "all"
-  }
+  "homepage": "https://github.com/digitalbazaar/bedrock-vue-create-persona-wizard"
 }
