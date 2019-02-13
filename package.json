@@ -3,7 +3,6 @@
   "version": "0.0.1-0",
   "description": "Vue.js create persona wizard component for Bedrock Web apps",
   "main": "index.js",
-  "less": "main.less",
   "peerDependencies": {
     "bedrock-quasar": "^2.0.0",
     "vue": "^2.5.16",
