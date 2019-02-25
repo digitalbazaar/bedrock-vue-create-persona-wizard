@@ -3,6 +3,9 @@
   "version": "0.0.1-0",
   "description": "Vue.js create persona wizard component for Bedrock Web apps",
   "main": "index.js",
+  "dependencies": {
+    "bedrock-vue-wizard": "digitalbazaar/bedrock-vue-wizard#refactor-wizard"
+  },
   "peerDependencies": {
     "bedrock-quasar": "^2.0.0",
     "vue": "^2.5.16",
@@ -28,5 +31,8 @@
   "bugs": {
     "url": "https://github.com/digitalbazaar/bedrock-vue-create-persona-wizard/issues"
   },
-  "homepage": "https://github.com/digitalbazaar/bedrock-vue-create-persona-wizard"
+  "homepage": "https://github.com/digitalbazaar/bedrock-vue-create-persona-wizard",
+  "bedrock": {
+    "browserDependencies": "all"
+  }
 }

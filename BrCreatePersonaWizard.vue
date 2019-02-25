@@ -1,70 +1,29 @@
 <template>
-  <q-stepper
-    ref="stepper"
-    v-model="currentStep"
-    class="fit no-shadow"
-    contractable>
-    <q-step
-      v-for="(step, index) in steps"
-      :key="index"
-      default
-      :name="index"
-      :title="step.title">
-      <div class="column justify-center items-center">
-        <q-icon
-          size="100px"
-          :name="step.iconName"
-          class="text-primary q-my-lg" />
-        <h3 class="text-weight-light q-my-sm">
-          {{step.label}}
-        </h3>
-        <h6
-          v-if="step.sublabel"
-          class="text-weight-light q-my-md">
-          {{step.sublabel}}
-        </h6>
-        <div
-          v-show="index > 0"
-          class="fit"
-          style="max-width: 600px;">
-          <div class="q-mx-xl q-mb-xl">
-            <br-persona-name-form
-              v-if="index === 1"
-              v-model="value.persona" />
-            <br-persona-details-form
-              v-else-if="index === 2"
-              v-model="value.persona" />
-            <br-create-persona-review-card
-              v-else
-              :form="value" />
-          </div>
+  <div class="fit">
+    <br-wizard
+      :current-step-index="stepIndex"
+      :total-steps="steps.length"
+      @finish="done($event)"
+      @index="stepIndex = $event">
+      <br-wizard-step
+        :heading="currentStep.heading"
+        :image="currentStep.image"
+        :icon="currentStep.icon"
+        :subheading="currentStep.subheading">
+        <div class="q-py-xl fit">
+          <br-persona-name-form
+            v-if="steps[stepIndex].name === 'Persona Name'"
+            v-model="value.persona" />
+          <br-persona-details-form
+            v-if="steps[stepIndex].name === 'Persona Details'"
+            v-model="value.persona" />
+          <br-create-persona-review-card
+            v-if="steps[stepIndex].name === 'Review and Submit'"
+            :form="value" />
         </div>
-      </div>
-    </q-step>
-    <q-stepper-navigation class="absolute-bottom-right">
-      <q-btn
-        v-show="!firstStep"
-        outline
-        color="primary"
-        size="md"
-        label="Back"
-        @click="previous()" />
-      <q-btn
-        v-if="!finalStep"
-        class="q-ml-sm"
-        color="primary"
-        size="md"
-        label="Next"
-        @click="next()" />
-      <q-btn
-        v-else
-        class="q-ml-sm"
-        color="primary"
-        size="md"
-        label="Done"
-        @click="done()" />
-    </q-stepper-navigation>
-  </q-stepper>
+      </br-wizard-step>
+    </br-wizard>
+  </div>
 </template>
 
 <script>
@@ -76,13 +35,16 @@
 import BrPersonaDetailsForm from './BrPersonaDetailsForm.vue';
 import BrPersonaNameForm from './BrPersonaNameForm.vue';
 import BrCreatePersonaReviewCard from './BrCreatePersonaReviewCard.vue';
+import {BrWizard, BrWizardStep} from 'bedrock-vue-wizard';
 
 export default {
   name: 'BrCreatePersonaWizard',
   components: {
     BrCreatePersonaReviewCard,
     BrPersonaNameForm,
-    BrPersonaDetailsForm
+    BrPersonaDetailsForm,
+    BrWizard,
+    BrWizardStep
   },
   props: {
     value: {
@@ -93,53 +55,60 @@ export default {
   },
   data() {
     return {
+      stepIndex: 0,
       steps: [
         {
-          iconName: 'fas fa-walking',
-          label: 'Welcome, let\'s get started!',
-          sublabel: 'We need to walk through a few steps to create a' +
+          icon: {
+            name: 'fas fa-walking',
+            size: '65px',
+            color: 'primary'
+          },
+          heading: 'Welcome, let\'s get started!',
+          subheading: 'We need to walk through a few steps to create a' +
                   ' Persona.',
-          title: 'Introduction',
+          name: 'Introduction',
         },
         {
-          iconName: 'far fa-list-alt',
-          label: 'Let\'s name your Persona',
-          title: 'Business Information'
+          icon: {
+            name: 'far fa-list-alt',
+            size: '65px',
+            color: 'primary'
+          },
+          heading: 'Let\'s name your Persona',
+          name: 'Persona Name'
         },
         {
-          iconName: 'far fa-list-alt',
-          label: 'Let\'s fill out some information about your Persona',
-          title: 'Address Information'
+          icon: {
+            name: 'far fa-list-alt',
+            size: '65px',
+            color: 'primary'
+          },
+          heading: 'Let\'s fill out some information about your Persona',
+          name: 'Persona Details'
         },
         {
-          iconName: 'fas fa-check-circle',
-          label: 'Does this look okay?',
-          title: 'Review and Submit'
+          icon: {
+            name: 'fas fa-check-circle',
+            size: '65px',
+            color: 'primary'
+          },
+          heading: 'Does this look okay?',
+          name: 'Review and Submit'
         }
-      ],
-      currentStep: 0
+      ]
     };
   },
   computed: {
+    currentStep() {
+      return this.steps[this.stepIndex];
+    },
     form() {
       return this.value;
     },
-    firstStep() {
-      return this.currentStep === 0;
-    },
-    finalStep() {
-      return this.currentStep === this.steps.length - 1;
-    }
   },
   methods: {
     done() {
       this.$emit('done');
-    },
-    next() {
-      this.$refs.stepper.next();
-    },
-    previous() {
-      this.$refs.stepper.previous();
     }
   }
 };
