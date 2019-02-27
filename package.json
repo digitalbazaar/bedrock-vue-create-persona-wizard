@@ -4,7 +4,7 @@
   "description": "Vue.js create persona wizard component for Bedrock Web apps",
   "main": "index.js",
   "dependencies": {
-    "bedrock-vue-wizard": "digitalbazaar/bedrock-vue-wizard#refactor-wizard"
+    "bedrock-vue-wizard": "^2.0.0"
   },
   "peerDependencies": {
     "bedrock-quasar": "^2.0.0",
