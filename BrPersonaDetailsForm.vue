@@ -1,25 +1,17 @@
 <template>
   <div class="fit">
-    <q-field
-      class="col-5 q-pr-md"
+    <q-input
+      v-model="givenName.value"
+      :label="givenName.label"
       :error="$v.givenName.$error"
-      orientation="vertical">
-      <q-input
-        v-model="givenName.value"
-        :float-label="givenName.label"
-        @blur="$v.givenName.$touch"
-        @keyup="$v.givenName.$touch" />
-    </q-field>
-    <q-field
-      class="col-5 q-pr-md"
+      @blur="$v.givenName.$touch"
+      @keyup="$v.givenName.$touch" />
+    <q-input
+      v-model="familyName.value"
       :error="$v.familyName.$error"
-      orientation="vertical">
-      <q-input
-        v-model="familyName.value"
-        :float-label="familyName.label"
-        @blur="$v.familyName.$touch"
-        @keyup="$v.familyName.$touch" />
-    </q-field>
+      :label="familyName.label"
+      @blur="$v.familyName.$touch"
+      @keyup="$v.familyName.$touch" />
   </div>
 </template>
 <script>
