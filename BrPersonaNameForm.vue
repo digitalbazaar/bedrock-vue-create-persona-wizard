@@ -1,17 +1,12 @@
 <template>
   <div class="fit">
-    <q-field
-      class="col-5 q-pr-md"
+    <q-input
+      v-model="name.value"
+      :label="name.label"
       :error="$v.name.$error"
-      helper="Example: Business, Education, Gaming, etc."
-      orientation="vertical">
-      <q-input
-        v-model="name.value"
-        :float-label="name.label"
-        placeholder="Please type a name for your Persona..."
-        @blur="$v.name.$touch"
-        @keyup="$v.name.$touch" />
-    </q-field>
+      hint="Example: Business, Education, Gaming, etc."
+      @blur="$v.name.$touch"
+      @keyup="$v.name.$touch" />
   </div>
 </template>
 <script>

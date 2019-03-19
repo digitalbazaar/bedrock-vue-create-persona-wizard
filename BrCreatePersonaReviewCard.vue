@@ -1,13 +1,13 @@
 <template>
   <div class="fit">
     <q-card>
-      <q-card-title>
+      <q-card-section>
         <div class="q-headline">
           Summary
         </div>
-      </q-card-title>
-      <q-card-separator />
-      <q-card-main>
+      </q-card-section>
+      <q-separator />
+      <q-card-section>
         <div>
           <div class="q-title text-weight-light q-my-md">
             Persona Information
@@ -23,7 +23,7 @@
             {{data.value}}
           </div>
         </div>
-      </q-card-main>
+      </q-card-section>
     </q-card>
   </div>
 </template>
