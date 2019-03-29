@@ -10,7 +10,7 @@
         :image="currentStep.image"
         :icon="currentStep.icon"
         :subheading="currentStep.subheading">
-        <div class="q-py-xl fit">
+        <div class="q-pb-xl full-width">
           <br-persona-name-form
             v-if="steps[stepIndex].name === 'Persona Name'"
             v-model="value.persona" />
