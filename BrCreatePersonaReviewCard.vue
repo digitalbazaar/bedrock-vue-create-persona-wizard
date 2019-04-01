@@ -16,7 +16,7 @@
         <div
           v-for="data in form.persona"
           :key="data.label">
-          <div class="uppercase text-bold q-mt-md q-mb-xs">
+          <div class="text-uppercase text-bold q-mt-md q-mb-xs">
             {{data.label}}
           </div>
           <div>
