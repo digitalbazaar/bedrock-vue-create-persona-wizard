@@ -1,6 +1,6 @@
 # bedrock-vue-create-persona-wizard ChangeLog
 
-## 2.0.0 -
+## 2.0.0 - 2019-04-10
 
 ### Added
 - Add ESlint rules for vue and jsdoc.
