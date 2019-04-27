@@ -1,6 +1,6 @@
 {
   "name": "bedrock-vue-create-persona-wizard",
-  "version": "2.0.1-0",
+  "version": "2.1.0",
   "description": "Vue.js create persona wizard component for Bedrock Web apps",
   "main": "index.js",
   "dependencies": {
