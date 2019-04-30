@@ -76,7 +76,7 @@ export default {
             size: '65px',
             color: 'primary'
           },
-          heading: 'Let\'s name your Persona',
+          heading: 'Let\'s name your Persona and choose a color for it',
           name: 'Persona Name'
         },
         {

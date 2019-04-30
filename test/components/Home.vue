@@ -27,6 +27,9 @@ export default {
           name: {
             value: ''
           },
+          color: {
+            value: '#3498DB'
+          },
           familyName: {
             value: ''
           },

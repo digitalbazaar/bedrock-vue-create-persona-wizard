@@ -19,7 +19,15 @@
           <div class="text-uppercase text-bold q-mt-md q-mb-xs">
             {{data.label}}
           </div>
-          <div>
+          <q-chip
+            v-if="data.value.startsWith('#')"
+            square
+            :style="{'background-color': data.value}"
+            text-color="white"
+            class="q-my-none q-mx-none">
+            {{data.value}}
+          </q-chip>
+          <div v-else>
             {{data.value}}
           </div>
         </div>
