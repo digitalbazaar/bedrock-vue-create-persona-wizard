@@ -14,10 +14,10 @@
         :subheading="currentStep.subheading">
         <div class="q-pb-xl full-width">
           <br-persona-name-form
-            v-if="steps[stepIndex].name === 'Persona Name'"
+            v-if="steps[stepIndex].name === 'Profile Name'"
             v-model="value.persona" />
           <br-persona-details-form
-            v-if="steps[stepIndex].name === 'Persona Details'"
+            v-if="steps[stepIndex].name === 'Profile Details'"
             v-model="value.persona" />
           <br-create-persona-review-card
             v-if="steps[stepIndex].name === 'Review and Submit'"
@@ -67,7 +67,7 @@ export default {
           },
           heading: 'Welcome, let\'s get started!',
           subheading: 'We need to walk through a few steps to create a' +
-                  ' Persona.',
+                  ' Profile.',
           name: 'Introduction',
         },
         {
@@ -76,8 +76,8 @@ export default {
             size: '65px',
             color: 'primary'
           },
-          heading: 'Let\'s name your Persona and choose a color for it',
-          name: 'Persona Name'
+          heading: 'Let\'s setup your new Profile',
+          name: 'Profile Name'
         },
         {
           icon: {
@@ -85,8 +85,8 @@ export default {
             size: '65px',
             color: 'primary'
           },
-          heading: 'Let\'s fill out some information about your Persona',
-          name: 'Persona Details'
+          heading: 'Let\'s fill out some information about your Profile',
+          name: 'Profile Details'
         },
         {
           icon: {

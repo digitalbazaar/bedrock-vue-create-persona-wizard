@@ -19,14 +19,20 @@
           <div class="text-uppercase text-bold q-mt-md q-mb-xs">
             {{data.label}}
           </div>
-          <q-chip
-            v-if="data.value.startsWith('#')"
-            square
-            :style="{'background-color': data.value}"
-            text-color="white"
-            class="q-my-none q-mx-none">
-            {{data.value}}
-          </q-chip>
+          <div v-if="data.value.startsWith('#')">
+            <q-chip
+              square
+              :style="{'background-color': data.value}"
+              text-color="white"
+              class="q-my-none q-mx-none">
+              {{data.value}}
+            </q-chip>
+            <q-btn flat color="grey-10" icon="fas fa-eye-dropper" size="10px" class="q-pa-sm">
+              <q-popup-proxy>
+                <q-color v-model="data.value" />
+              </q-popup-proxy>
+            </q-btn>
+          </div>
           <div v-else>
             {{data.value}}
           </div>

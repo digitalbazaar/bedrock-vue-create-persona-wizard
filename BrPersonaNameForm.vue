@@ -7,10 +7,6 @@
       hint="Example: Business, Education, Gaming, etc."
       @blur="$v.name.$touch"
       @keyup="$v.name.$touch" />
-    <q-color
-      v-model="color.value"
-      style="max-width: 250px"
-      class="q-mx-auto q-mt-xl"/>
   </div>
 </template>
 <script>
@@ -52,7 +48,7 @@ export default {
     const updatedLabels = _applyDefaultLabels({
       data: this.value,
       labels: {
-        name: 'Persona Name',
+        name: 'Profile Name',
         color: 'Profile Color'
       }
     });

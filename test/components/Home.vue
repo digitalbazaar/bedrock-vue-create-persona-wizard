@@ -16,6 +16,7 @@
 'use strict';
 
 import {BrCreatePersonaWizard} from 'bedrock-vue-create-persona-wizard';
+import {randomColor} from 'randomcolor';
 
 export default {
   name: 'Home',
@@ -28,7 +29,7 @@ export default {
             value: ''
           },
           color: {
-            value: '#3498DB'
+            value: randomColor()
           },
           familyName: {
             value: ''
