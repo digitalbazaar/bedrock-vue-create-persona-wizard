@@ -37,9 +37,6 @@ export default {
     name() {
       return this.value.name;
     },
-    color() {
-      return this.value.color;
-    },
     valid() {
       return !this.$v.$invalid;
     }
