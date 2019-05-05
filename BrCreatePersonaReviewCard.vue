@@ -10,7 +10,7 @@
       <q-card-section>
         <div>
           <div class="q-title text-weight-light q-my-md">
-            Persona Information
+            Profile Information
           </div>
         </div>
         <div
