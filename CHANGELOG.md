@@ -1,5 +1,13 @@
 # bedrock-vue-create-persona-wizard ChangeLog
 
+## 2.1.0 - 2019-05-08
+
+### Added
+- Add random color to profile.
+
+### Changed
+- Rename "persona" to "profile".
+
 ## 2.1.0 - 2019-04-27
 
 ### Added
