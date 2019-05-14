@@ -1,5 +1,5 @@
 <template>
-  <div class="fit">
+  <div class="fit" >
     <q-card>
       <q-card-section>
         <div class="text-h5">
@@ -28,9 +28,11 @@
               {{data.value}}
             </q-chip>
             <q-btn flat color="grey-10" icon="fas fa-eye-dropper" size="10px" class="q-pa-sm">
-              <q-popup-proxy>
+              <q-menu
+                anchor="center middle"
+                self="center middle">
                 <q-color v-model="data.value" />
-              </q-popup-proxy>
+              </q-menu>
             </q-btn>
           </div>
           <div v-else>
