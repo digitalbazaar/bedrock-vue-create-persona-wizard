@@ -1,5 +1,5 @@
 <template>
-  <div class="fit" >
+  <div class="fit">
     <q-card>
       <q-card-section>
         <div class="text-h5">
